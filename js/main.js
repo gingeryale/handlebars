@@ -1,3 +1,5 @@
+var myTemplate = require("./myTemplate.hbs");
+
 var ourRequest = new XMLHttpRequest();
 ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/pets-data.json');
 ourRequest.onload = function() {
@@ -17,21 +19,7 @@ ourRequest.onerror = function() {
 
 ourRequest.send();
 
-Handlebars.registerHelper("calculateAge", function(birthYear){
-	var age = new Date().getFullYear() - birthYear;
-	
-	if(age > 0){
-		return age + " years old";
-	} else {
-		return "Less than 1 year old";
-	}
-});
-
-
 function createHTML(petsData){
-	var rawTemplate = document.getElementById("petsTemplate").innerHTML;
-	var compiledTemplate = Handlebars.compile(rawTemplate);
-	var genHTML = compiledTemplate(petsData);
 	var petsContainer = document.getElementById("pets-container");
-	petsContainer.innerHTML = genHTML;
+	petsContainer.innerHTML = myTemplate(petsData);
 }

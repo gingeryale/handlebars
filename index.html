@@ -12,33 +12,8 @@
   <div id="pets-container"></div>
 </div>
 
-<script id="petsTemplate" type="text/x-handlebars-template">
-	{{#each pets}}
-		<div class="pet">
-			<div class="photo-album">
-			<img src="{{photo}}">
-			</div>
-			<div class="info-colum">
-				<h2>{{name}} <span class="species">({{species}})</span></h2>
-				<p>Age: {{calculateAge birthYear}}</p>
-				{{#if favFoods}}
-				<h4 class="headline-bar">Favorite Foods</h4>
-				<ul class="favorite-foods">
-					{{#each favFoods}}
-					<li>{{{this}}}</li>
-					{{/each}}
-				</ul>
-				{{/if}}
-			</div>	
-		</div>
 
+<script src="js/main-bundled.js"></script>
 
-	{{/each}}
-</script>
-
-
-<script src="js/handlebars.min.js">
-</script>
-<script src="js/main.js"></script>
 </body>
 </html>
